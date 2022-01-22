@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-icon>local_fire_department</mat-icon>
+  <span class="logo">IT Sports</span>
+
+  <button *ngIf="userService.getUserId() | async" routerLink="/courses" routerLinkActive="mat-raised-button" mat-button class="navigation-item">
+    {{ 'main.courses' | translate }}
+  </button>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">{{ selectedLanguage }}</button>
+  <mat-menu #menu="matMenu">
+    <button *ngFor="let language of languages" (click)="changeLanguage(language)" mat-menu-item>{{ language }}</button>
+  </mat-menu>
+
+  <button *ngIf="userService.getUserId() | async" mat-button (click)="logout()">
+    {{ 'main.logout' | translate }}
+  </button>
+</mat-toolbar>

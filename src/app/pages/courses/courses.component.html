@@ -1,0 +1,24 @@
+<div *ngFor="let course of courses | async" class="courses-list">
+    <mat-card class="course-card">
+        <mat-card-title>{{course.name}}</mat-card-title>
+        <mat-card-subtitle>{{'courses.maxAttendees' | translate}} {{course.maxNumberAttendees}}</mat-card-subtitle>
+        <mat-card-subtitle>{{'courses.currentlySignedUp' | translate}} {{ course | participantsCount }}</mat-card-subtitle>
+        
+        <mat-card-content>
+            <p>{{'courses.startTime' | translate}} {{course.startTime | date:'MMM d, y, h:mm a'}}</p>
+            <p>{{'courses.endTime' | translate}} {{course.endTime | date:'MMM d, y, h:mm a'}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button *ngIf="course.participants && course.participants[userId] else bookingPossible"
+             mat-button color="warn" (click)="leaveCourse(course.id)">
+             {{'courses.leaveCourse' | translate}}
+            </button>
+            <ng-template #bookingPossible>
+                <button [disabled]="!bookingAllowed(course.maxNumberAttendees, course | participantsCount)"
+                mat-button color="primary" (click)="bookCourse(course)">
+                    {{'courses.book' | translate}}
+                </button>
+            </ng-template>
+        </mat-card-actions>
+    </mat-card>
+</div>

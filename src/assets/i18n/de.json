@@ -1,0 +1,21 @@
+{
+  "main": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "courses": "Kurse"
+  },
+  "welcome": {
+    "header": "Willkommen bei IT Sports",
+    "explanation": "Wir bieten verschiedene Kurse fuer Software-Entwickler an.",
+    "registerCall": "Wenn Sie sich noch nicht registriert haben, können Sie dies hier tun:",
+    "registerButton": "Registrieren"
+  },
+  "courses": {
+    "maxAttendees": "Maximale Kapazität:",
+    "startTime": "Beginn",
+    "endTime": "Ende",
+    "book": "Buchen",
+    "leaveCourse": "Kurs verlassen",
+    "currentlySignedUp": "Momentane Teilnehmerzahl:"
+  }
+}

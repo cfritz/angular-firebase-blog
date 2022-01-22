@@ -1,0 +1,21 @@
+{
+  "main": {
+    "login": "Login",
+    "logout": "Logout",
+    "courses": "Courses"
+  },
+  "welcome": {
+    "header": "Welcome to IT Sports",
+    "explanation": "We offer different activities for Software Engineers.",
+    "registerCall": "If you are not signed up yet, please register here:",
+    "registerButton": "Register"
+  },
+  "courses": {
+    "maxAttendees": "Maximum capacity:",
+    "startTime": "Start time:",
+    "endTime": "End time:",
+    "book": "Book your spot",
+    "leaveCourse": "Remove me from this course",
+    "currentlySignedUp": "Number of attendees:"
+  }
+}

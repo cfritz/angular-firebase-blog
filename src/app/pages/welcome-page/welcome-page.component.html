@@ -1,0 +1,13 @@
+<div class="welcome">
+    <mat-card class="welcome-card">
+        <mat-card-title>{{ 'welcome.header' | translate }}</mat-card-title>
+        <mat-card-content>
+            {{ 'welcome.explanation' | translate}}
+            <div *ngIf="!(userService.getUserId() | async)">
+                {{ 'welcome.registerCall' | translate }}
+                <firebase-ui (signInFailure)="errorCallback($event)">
+                </firebase-ui>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
